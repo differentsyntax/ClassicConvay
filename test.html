@@ -4,36 +4,38 @@
         <meta charset="utf-8" />
         <style type="text/css">
             
-            #table-container table {
-                border-collapse: collapse;
-            }
-            
-            #table-container table, th, td {
-                border: 1px solid black;
+            #board {
+            border-collapse: collapse;
+            margin: auto;
             }
 
-            td {
-                height: 25px;
-                width: 25px;
+            #board td {
+            border: 1px solid black;
+            height: 25px;
+            width: 25px;
+            }
+
+            #button-container {
+                text-align: center;
             }
             
         </style>
     </head>
     <body>
-        <div id="table-container"></div>
+        <table id="board"></table>
+        <br/>
+        <div id="button-container">
+            <button onclick="startInterval()">Go</button>
+            <button onclick="stopInterval()">Pause</button>
+            <button onclick="randomBoard(25, 25)">Random</button>
+            <button onclick="stepBoard()">Step</button>
+            <button onclick="boardReset(25, 25)">Reset</button>
+        </div>
         <!-- your script: -->
         <script src="conway.js"></script>
         <!-- your tests: -->
         <script>
-            console.log(stepBoard([]));
-            
-            // should print: []
-
-            console.log(stepBoard([[true, true, true]]));
-            // should print: [[false, true, false]]
-
-            console.log(stepBoard([[true, false, true], [false, true, false]]));
-            // should print: [[false, true, false], [false, true, false]]
+            boardReset(25, 25);
         </script>
     </body>
 </html>
